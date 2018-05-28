@@ -3,8 +3,17 @@
   position: sticky;
   top: 0;
   z-index: 1;
+  padding: 1rem;
 }
 
 .Nav--Container {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Nav--Container-Group {
+  display: flex;
+  align-items: stretch;
+  justify-content: end;
 }

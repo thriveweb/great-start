@@ -1,7 +1,7 @@
 .PageHeader {
   line-height: 1em;
-  color: var(--primary);
-  background: var(--primary);
+  color: var(--col1);
+  background: var(--col1);
   color: white;
 }
 

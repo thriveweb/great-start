@@ -1,10 +1,10 @@
 .Footer {
-  background: var(--primary);
+  background: var(--col1);
   color: white;
 }
 
 .Footer--Lower {
-  background: var(--primary);
+  background: var(--col1);
   padding: 1rem 0;
   font-weight: 100;
 }

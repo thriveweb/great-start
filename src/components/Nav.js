@@ -11,18 +11,37 @@ export default ({ handlePopupOpen }) => (
       <Link to='/'>
         <Logo />
       </Link>
-      <NavLink to='/' exact>
-        Home
-      </NavLink>
-      <NavLink to='/about/' exact>
-        About
-      </NavLink>
-      <NavLink to='/blog/' exact>
-        Blog
-      </NavLink>
-      <NavLink to='/contact/' exact>
-        Contact
-      </NavLink>
+      <div className='Nav--Container-Group'>
+        <NavLink to='/' exact>
+          Home
+        </NavLink>
+        <NavLink to='/about/' exact>
+          About
+        </NavLink>
+        <NavLink to='/learning/' exact>
+          Learning
+        </NavLink>
+        <NavLink to='/centres/' exact>
+          Centres
+        </NavLink>
+        <NavLink to='/enrollments/' exact>
+          Enrollments
+        </NavLink>
+        <NavLink to='/parents/' exact>
+          Parents
+        </NavLink>
+        <NavLink to='/careers/' exact>
+          Careers
+        </NavLink>
+        <NavLink to='/contact/' exact>
+          Contact
+        </NavLink>
+        <div className='pipe' />
+        <NavLink to='https://login.com/'>Login</NavLink>
+        <NavLink className='button' to='/enrol-now/' exact>
+          Enrol now
+        </NavLink>
+      </div>
     </div>
   </nav>
 )
