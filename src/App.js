@@ -1,24 +1,22 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Helmet from 'react-helmet'
-import _findIndex from 'lodash/findIndex'
+// import _findIndex from 'lodash/findIndex'
 
 import ScrollToTop from './components/ScrollToTop'
 import Meta from './components/Meta'
-import Home from './views/Home'
-import About from './views/About'
-import Blog from './views/Blog'
-import SinglePost from './views/SinglePost'
-import Contact from './views/Contact'
-import NoMatch from './views/NoMatch'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
-import GithubCorner from './components/GithubCorner'
 import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
 import AOS from './components/AOS'
 import data from './data.json'
-import { slugify } from './util/url'
-import { documentHasTerm, getCollectionTerms } from './util/collection'
+
+import Home from './views/Home'
+import About from './views/About'
+import Contact from './views/Contact'
+import NoMatch from './views/NoMatch'
+
+// import { slugify } from './util/url'
 
 class App extends Component {
   state = {
@@ -41,21 +39,12 @@ class App extends Component {
       headerScripts
     } = globalSettings
 
-    const posts = this.getDocuments('posts').filter(
-      post => post.status !== 'Draft'
-    )
-    const categoriesFromPosts = getCollectionTerms(posts, 'categories')
-    const postCategories = this.getDocuments('postCategories').filter(
-      category => categoriesFromPosts.indexOf(category.name.toLowerCase()) >= 0
-    )
-
     return (
       <Router>
         <div className='React-Wrap'>
           <AOS options={{ duration: 250 }} />
           <ScrollToTop />
           <ServiceWorkerNotifications reloadOnUpdate />
-          <GithubCorner url='https://github.com/Jinksi/netlify-cms-react-starter' />
           <Helmet
             defaultTitle={siteTitle}
             titleTemplate={`${siteTitle} | %s`}
@@ -103,64 +92,6 @@ class App extends Component {
                   {...props}
                 />
               )}
-            />
-
-            {/* Blog Routes */}
-            <Route
-              path='/blog/'
-              exact
-              render={props => (
-                <Blog
-                  posts={posts}
-                  postCategories={postCategories}
-                  {...props}
-                />
-              )}
-            />
-            <Route
-              path='/blog/category/:slug/'
-              render={props => {
-                //  help needed
-                const slug = props.match.params.slug
-                const categoryPosts = posts.filter(post =>
-                  documentHasTerm(post, 'categories', slug)
-                )
-                if (!categoryPosts.length) return <NoMatch siteUrl={siteUrl} />
-                return (
-                  <Blog
-                    posts={categoryPosts}
-                    postCategories={postCategories}
-                    showFeatured={false}
-                    {...props}
-                  />
-                )
-              }}
-            />
-            <Route
-              path='/blog/:slug/'
-              render={props => {
-                const slug = props.match.params.slug
-                const singlePostID = _findIndex(
-                  posts,
-                  item => slugify(item.title) === slug
-                )
-                const singlePost = posts[singlePostID]
-                const nextPost = posts[singlePostID + 1]
-                const prevPost = posts[singlePostID - 1]
-                if (!singlePost) return <NoMatch siteUrl={siteUrl} />
-                return (
-                  <SinglePost
-                    singlePost={singlePost}
-                    nextPostURL={
-                      nextPost && `/blog/${slugify(nextPost.title)}/`
-                    }
-                    prevPostURL={
-                      prevPost && `/blog/${slugify(prevPost.title)}/`
-                    }
-                    {...props}
-                  />
-                )
-              }}
             />
 
             <Route render={() => <NoMatch siteUrl={siteUrl} />} />
