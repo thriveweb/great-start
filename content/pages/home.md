@@ -3,7 +3,7 @@ title: Hello World!
 subtitle: <Home />
 ---
 
-# 🌶 Netlify CMS + React Starter
+# 🌶 Great Start
 
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
@@ -23,31 +23,31 @@ I aim to include commonly used components and best-practices e.g. forms, setting
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Jinksi/netlify-cms-react-starter)
 
-1. Hit the **Deploy to Netlify** button. This will:
+1.  Hit the **Deploy to Netlify** button. This will:
 
-   * Clone the repo into your Github account
-   * Create you a new project on Netlify, build & deploy
+    * Clone the repo into your Github account
+    * Create you a new project on Netlify, build & deploy
 
-1. Once your Netlify project has been created, change a couple of settings:
+1.  Once your Netlify project has been created, change a couple of settings:
 
-   * Enable **Identity**
-   * Change **Registration Preferences** to **Invite Only**
-   * Enable **Git Gateway**
+    * Enable **Identity**
+    * Change **Registration Preferences** to **Invite Only**
+    * Enable **Git Gateway**
 
-1. Invite users (probably yourself) to enable admin access
-   * Open the **Identity** tab and hit **Invite Users**
+1.  Invite users (probably yourself) to enable admin access
+    * Open the **Identity** tab and hit **Invite Users**
 
 ## Developing
 
-1. Clone your repo to your local machine
+1.  Clone your repo to your local machine
 
-1. Install dependencies
+1.  Install dependencies
 
-   `yarn` or `npm install`
+    `yarn` or `npm install`
 
-1. Run the development server
+1.  Run the development server
 
-   `yarn start` or `npm run start`
+    `yarn start` or `npm run start`
 
 If you are adding or editing content locally in the CMS, a couple of things to note:
 
