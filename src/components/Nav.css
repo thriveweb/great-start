@@ -14,6 +14,24 @@
 
 .Nav--Container-Group {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: end;
+}
+
+.Nav-Pipe {
+  width: 1px;
+  height: 3rem;
+  margin: auto 0.5rem;
+  background: var(--col2);
+}
+
+.Nav-Login {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--col5);
+}
+.Nav-Login img {
+  margin: 0 1rem 0 0;
+  display: block;
 }

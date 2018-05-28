@@ -157,8 +157,8 @@ blockquote {
 }
 
 .container {
-  max-width: 1111px;
-  width: 90%;
+  max-width: 1200px;
+  width: 96%;
   margin: 0 auto;
 }
 .container.skinny {
@@ -171,23 +171,18 @@ blockquote {
 /* Buttons */
 
 .Button {
-  background: var(--col1);
-  color: white;
-  text-transform: uppercase;
+  background: white;
+  color: var(--col2);
+  border: currentColor 1px solid;
   text-decoration: none;
   font-weight: 400;
-  letter-spacing: 0.15em;
-  font-size: 1.4rem;
-  display: inline-block;
   padding: 1rem 2rem;
-  border: none;
   transition: all 0.2s ease;
   cursor: pointer;
-  border-radius: var(--borderRadius);
 }
-.Button:hover,
-.Button:focus {
-  background: var(--col2);
+.Button:hover {
+  box-shadow: 4px 4px 0px 0px rgba(159, 201, 235, 0.75);
+  color: white;
   outline: none;
 }
 .Button[disabled] {

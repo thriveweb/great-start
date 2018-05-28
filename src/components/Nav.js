@@ -12,9 +12,6 @@ export default ({ handlePopupOpen }) => (
         <Logo />
       </Link>
       <div className='Nav--Container-Group'>
-        <NavLink to='/' exact>
-          Home
-        </NavLink>
         <NavLink to='/about/' exact>
           About
         </NavLink>
@@ -36,9 +33,12 @@ export default ({ handlePopupOpen }) => (
         <NavLink to='/contact/' exact>
           Contact
         </NavLink>
-        <div className='pipe' />
-        <NavLink to='https://login.com/'>Login</NavLink>
-        <NavLink className='button' to='/enrol-now/' exact>
+        <div className='Nav-Pipe' />
+        <NavLink className='Nav-Login' to='https://login.com/'>
+          <img src='/images/login.svg' alt='Person Icon' />
+          Login
+        </NavLink>
+        <NavLink className='Button Button-outline' to='/enrol-now/' exact>
           Enrol now
         </NavLink>
       </div>
